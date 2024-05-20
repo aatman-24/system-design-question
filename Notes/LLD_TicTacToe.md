@@ -279,8 +279,36 @@ Game Logic:
     
     }
 
+---
 
+### Phase 4: Review and optimization 
 
+- I don't think so here we need two separate class for two markers we can create on fly as well using direct Marker class.  
 
+Before:
+
+    public class MarkerO extends Marker{
+    
+        public MarkerO() {
+            super(MarkerEnum.O);
+        }
+    }
+
+    public class MarkerX extends Marker{
+    
+        public MarkerX() {
+            super(MarkerEnum.X);
+        }
+    }
+
+    Player p1 = new Player(new MarkerO(), "aatman@gmail.com");
+    Player p2 = new Player(new MarkerX(), "mitul@gmail.com");
+
+After:
+    
+    Player p1 = new Player(new Marker(MarkerEnum.O), "aatman@gmail.com");
+    Player p2 = new Player(new Marker(MarkerEnum.X), "mitul@gmail.com");
+
+- Which again gives me an opportunity to create FactoryDesign Pattern for Markers. I don't it is necessary or not. I just want to implement it, because I learnt today!!
 
 
