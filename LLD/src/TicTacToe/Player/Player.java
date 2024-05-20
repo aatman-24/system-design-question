@@ -12,7 +12,6 @@ public class Player {
         this.email = email;
     }
 
-
     public String getEmail() {
         return email;
     }

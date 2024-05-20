@@ -1,6 +1,18 @@
 package TicTacToe.Marker;
 
-public interface Marker {
-    MarkerEnum getSign();
-    void setSign(MarkerEnum sign);
+public class Marker {
+
+    MarkerEnum sign;
+
+    public Marker(MarkerEnum sign) {
+        this.sign = sign;
+    }
+
+    public void setSign(MarkerEnum sign) {
+        this.sign = sign;
+    }
+
+    public MarkerEnum getSign() {
+        return this.sign;
+    }
 }
