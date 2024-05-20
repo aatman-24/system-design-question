@@ -309,6 +309,29 @@ After:
     Player p1 = new Player(new Marker(MarkerEnum.O), "aatman@gmail.com");
     Player p2 = new Player(new Marker(MarkerEnum.X), "mitul@gmail.com");
 
-- Which again gives me an opportunity to create FactoryDesign Pattern for Markers. I don't it is necessary or not. I just want to implement it, because I learnt today!!
+- Which again gives me an opportunity to create FactoryDesign Pattern for Markers. I don't know it is necessary or not here. I just want to implement it, because I learnt it today!!
 
+
+Before:
+
+    Player p1 = new Player(new Marker(MarkerEnum.O), "aatman@gmail.com");
+    Player p2 = new Player(new Marker(MarkerEnum.X), "mitul@gmail.com");
+
+After:
+    
+    public class MarkerFactory {
+    
+        public static Marker getMarker(MarkerEnum type) {
+    
+            return switch (type) {
+                case X -> new Marker(X);
+                case O -> new Marker(O);
+                default -> new Marker($);
+            };
+        }
+    }
+
+    Player p1 = new Player(MarkerFactory.getMarker(MarkerEnum.O), "aatman@gmail.com");
+    Player p2 = new Player(MarkerFactory.getMarker(MarkerEnum.X), "mitul@gmail.com");
+    
 

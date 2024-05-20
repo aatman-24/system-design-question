@@ -2,6 +2,7 @@ package TicTacToe;
 
 import TicTacToe.Marker.Marker;
 import TicTacToe.Marker.MarkerEnum;
+import TicTacToe.Marker.MarkerFactory;
 import TicTacToe.Player.Player;
 
 import java.util.*;
@@ -22,8 +23,8 @@ public class Game {
 
     public void initializeGame() {
         players = new LinkedList<>();
-        Player p1 = new Player(new Marker(MarkerEnum.O), "aatman@gmail.com");
-        Player p2 = new Player(new Marker(MarkerEnum.X), "mitul@gmail.com");
+        Player p1 = new Player(MarkerFactory.getMarker(MarkerEnum.O), "aatman@gmail.com");
+        Player p2 = new Player(MarkerFactory.getMarker(MarkerEnum.X), "mitul@gmail.com");
         players.add(p1);
         players.add(p2);
     }
